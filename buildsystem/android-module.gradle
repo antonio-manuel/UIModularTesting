@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "de.mannodermaus.android-junit5"
+
+android {
+    compileSdkVersion project.compile_sdk_version
+
+    defaultConfig {
+        minSdkVersion project.min_sdk_version
+        targetSdkVersion project.target_sdk_version
+        versionCode project.version_code
+        versionName project.version_name
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner project.test_inst_runner
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/integration/kotlin'
+        test.java.srcDirs += 'src/test/unitaries/kotlin'
+        test.java.srcDirs += 'src/test/property/kotlin'
+        androidTest.java.srcDirs += 'src/test/acceptance/kotlin'
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        animationsDisabled = true
+        unitTests.returnDefaultValues = true
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.md'
+        pickFirst 'META-INF/LICENSE-notice.md'
+        pickFirst 'mockito-extensions/org.mockito.plugins.MockMaker'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}

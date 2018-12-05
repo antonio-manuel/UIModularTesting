@@ -1,0 +1,49 @@
+ext {
+    coroutines_version = "1.0.1"
+    anko_version = "0.10.8"
+
+    //DI
+    kodein_version = "5.3.0"
+
+    //Testing
+    mockito_core_version = "2.22.0"
+    mockito_kotlin_version = "2.0.0"
+    assertj_version = "3.11.1"
+    expresso_core_version = "3.1.0"
+    test_core_version = "1.1.0-alpha01"
+    test_rules_version = "1.1.0"
+    test_runner_version = "1.1.0"
+    android_junit_version = "1.0.0"
+    android_junit_ktx_version = "1.1.0-alpha01"
+
+    //Android
+    constraint_version = "1.1.3"
+
+    anko_coroutines = "org.jetbrains.anko:anko-coroutines:${anko_version}"
+    appCompat = "com.android.support:appcompat-v7:${project.support_version}"
+    design = "com.android.support:design:${project.support_version}"
+    support = "com.android.support:support-core-utils:${project.support_version}"
+    support_annotations = "com.android.support:support-annotations:${project.support_version}"
+    cardview = "com.android.support:cardview-v7:${project.support_version}"
+    constraint_layout = "com.android.support.constraint:constraint-layout:${constraint_version}"
+    coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
+    coroutines_common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${coroutines_version}"
+    coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_version}"
+    coroutines_reactive = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${coroutines_version}"
+    kodein = "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
+    kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
+    kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
+
+    kotlin_test_junit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
+    assertJ = "org.assertj:assertj-core:${assertj_version}"
+    mockito_inline = "org.mockito:mockito-inline:${mockito_core_version}"
+    mockito_android = "org.mockito:mockito-android:${mockito_core_version}"
+    mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockito_kotlin_version}"
+    test_core = "androidx.test:core:${test_core_version}"
+    test_core_ktx = "androidx.test:core-ktx:${test_core_version}"
+    android_junit = "androidx.test.ext:junit:${android_junit_version}"
+    android_junit_ktx = "androidx.test.ext:junit-ktx:${android_junit_ktx_version}"
+    test_runner = "androidx.test:runner:${test_runner_version}"
+    test_rules = "androidx.test:rules:${test_rules_version}"
+    espresso_core = "androidx.test.espresso:espresso-core:${expresso_core_version}"
+}
