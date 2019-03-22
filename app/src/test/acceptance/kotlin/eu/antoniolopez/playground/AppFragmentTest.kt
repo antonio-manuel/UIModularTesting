@@ -2,38 +2,37 @@ package eu.antoniolopez.playground
 
 import android.app.Application
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import eu.antoniolopez.playground.view.MainActivity
+import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
+import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
+import eu.antoniolopez.playground.presenter.MainPresenter
+import eu.antoniolopez.playground.view.MainFragment
 import org.junit.Assert.assertEquals
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.singleton
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-class AppFragmentTest {
+class AppFragmentTest : InstrumentationUnitTest() {
 
-    private val STRING_TO_BE_TYPED = "Espresso"
+    private val mockPresenter: MainPresenter = MainPresenter()
 
-    @get:Rule
-    var testActivityRule = activityScenarioRule<MainActivity>()
+    override fun onRequestFragment() = MainFragment.newInstance()
 
-    @Test
-    fun replaceText() {
-        onView(ViewMatchers.withId(eu.antoniolopez.playground.R.id.editTextUserInput))
-            .perform(ViewActions.typeText(STRING_TO_BE_TYPED), ViewActions.closeSoftKeyboard())
-            .check(ViewAssertions.matches(ViewMatchers.withText(STRING_TO_BE_TYPED)))
+    override fun onPrepareBeforeEachTest() {
+        featureComponent = Kodein.invoke(allowSilentOverride = true) {
+            bind<MainPresenter>(overrides = true) with singleton { mockPresenter }
+        }
+        super.onPrepareBeforeEachTest()
     }
 
     @Test
-    fun packageFromRuleIsTheSameAsSupposed() {
+    fun itemInMiddleOfList_hasSpecialText() {
         val appContext = ApplicationProvider.getApplicationContext<Application>()
-        assertEquals("eu.antoniolopez.playground", appContext.packageName)
+        assertEquals("eu.antoniolopez.playgroundt", appContext.packageName)
     }
 }

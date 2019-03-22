@@ -46,6 +46,6 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
     @Test
     fun itemInMiddleOfList_hasSpecialText() {
         val appContext = ApplicationProvider.getApplicationContext<Application>()
-        assertEquals("eu.antoniolopez.base.test", appContext.packageName)
+        assertEquals("eu.antoniolopez.playground.feature.helloworld", appContext.packageName)
     }
 }
