@@ -1,15 +1,13 @@
 package eu.antoniolopez.playground.view
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import eu.antoniolopez.playground.R
-import eu.antoniolopez.playground.threading.bg
-import kotlinx.android.synthetic.main.activity_main.*
+import android.app.Activity
+import eu.antoniolopez.playground.core.view.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+/**
+ * An [Activity] that gets a text string from the user and displays it back when the user
+ * clicks on one of the two buttons. The first one shows it in the same activity and the second
+ * one opens another activity and displays the message.
+ */
+class MainActivity : BaseActivity() {
+    override fun onRequestFragment() = MainFragment.newInstance()
 }

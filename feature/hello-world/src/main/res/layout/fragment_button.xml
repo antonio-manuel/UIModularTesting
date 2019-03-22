@@ -1,0 +1,30 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="eu.antoniolopez.playground.feature.helloworld.view.HelloWorldFragment">
+
+    <TextView
+            android:id="@+id/textToBeChanged"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Hello world"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+    <EditText
+            android:id="@+id/editTextUserInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Type something"/>
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/changeTextBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change text"
+            android:layout_gravity="center_horizontal"/>
+</FrameLayout>

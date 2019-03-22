@@ -1,0 +1,27 @@
+apply from: "${rootDir}/buildsystem/android-module.gradle"
+
+android {
+    defaultConfig {
+        minSdkVersion project.min_sdk_version
+        targetSdkVersion project.target_sdk_version
+    }
+}
+
+dependencies {
+    implementation project(":infrastructure:core")
+    implementation project(":infrastructure:exceptions")
+
+    // Views
+    implementation appCompat
+    implementation design
+    implementation constraint_layout
+
+    // Dependency injection
+    implementation kodein
+
+    api anko_common
+    api arrow_datatypes
+
+    // Log
+    implementation timber
+}

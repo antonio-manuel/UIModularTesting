@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="that_feature_is_not_available">Upps!! That feature is not yet available.</string>
+    <string name="scheme" translatable="false">antonioplayground</string>
+</resources>

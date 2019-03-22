@@ -10,11 +10,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/base" />
+            <option value="$PROJECT_DIR$/feature/hello-world" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/core" />
+            <option value="$PROJECT_DIR$/infrastructure/core-testing" />
+            <option value="$PROJECT_DIR$/infrastructure/core-view" />
             <option value="$PROJECT_DIR$/infrastructure/core-view-testing" />
             <option value="$PROJECT_DIR$/infrastructure/exceptions" />
+            <option value="$PROJECT_DIR$/infrastructure/navigation" />
             <option value="$PROJECT_DIR$/infrastructure/threading" />
           </set>
         </option>

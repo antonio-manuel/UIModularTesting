@@ -54,9 +54,12 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    implementation project(':feature:base')
     implementation project(':infrastructure:core')
+    implementation project(':infrastructure:core-view')
     implementation project(':infrastructure:threading')
+    implementation project(':infrastructure:navigation')
+
+    implementation project(':feature:hello-world')
     implementation appCompat
     implementation design
     implementation constraint_layout
