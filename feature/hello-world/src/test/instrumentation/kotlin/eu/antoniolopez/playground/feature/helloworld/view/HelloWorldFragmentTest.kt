@@ -1,7 +1,5 @@
-package eu.antoniolopez.base
+package eu.antoniolopez.playground.feature.helloworld.view
 
-import android.app.Application
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -11,9 +9,7 @@ import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
 import eu.antoniolopez.playground.feature.helloworld.R
 import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
 import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
-import eu.antoniolopez.playground.feature.helloworld.view.HelloWorldFragment
 import io.mockk.mockk
-import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton

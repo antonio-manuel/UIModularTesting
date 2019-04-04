@@ -33,7 +33,7 @@ class HelloWorldFragment
         }
     }
 
-    override fun setText(text: String) {
+    override fun renderText(text: String) {
         textToBeChanged.text = text
     }
 }

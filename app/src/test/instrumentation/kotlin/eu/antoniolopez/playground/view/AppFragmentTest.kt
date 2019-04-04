@@ -1,5 +1,5 @@
 package eu.antoniolopez.playground.view
-/*
+
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
@@ -25,10 +25,10 @@ class AppFragmentTest : InstrumentationUnitTest() {
         super.onPrepareBeforeEachTest()
     }
 
-    //@Test
+    @Test
     fun scrollToItemBelowFold_checkItsText() {
         onView(ViewMatchers.withId(R.id.button_activity))
             .check(ViewAssertions.matches(ViewMatchers.withText("Navigate")))
     }
 }
-*/
+

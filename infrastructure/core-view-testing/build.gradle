@@ -1,8 +1,13 @@
 apply from: "${rootDir}/buildsystem/android-module.gradle"
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 dependencies {
     implementation kotlin_JDK8
-    //api kotlin_reflect
     implementation support
     implementation appCompat
     api test_core
@@ -12,10 +17,4 @@ dependencies {
     api espresso_core
     api mockk_core
     api mockk_android
-    /*
-    api test_core_ktx
-    api test_runner
-    api kotlin_test_junit
-    api assertJ
-    */
 }

@@ -1,18 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.antoniolopez.playground.core.view.testing">
+          package="eu.antoniolopez.playground.core.view.testing">
 
-    <application
-        android:allowBackup="false"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+    <application>
         <activity
-            android:name=".view.SingleFragmentActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                android:name=".view.SingleFragmentActivity"
+                android:screenOrientation="portrait"/>
     </application>
 </manifest>

@@ -6,10 +6,10 @@ import eu.antoniolopez.playground.core.view.presentation.LifecyclePresenter
 class HelloWorldPresenter : LifecyclePresenter<HelloWorldPresenter.View>() {
 
     fun onButton(text: String) {
-        view?.setText(text)
+        view?.renderText(text)
     }
 
     interface View : LifecycleView {
-        fun setText(text: String)
+        fun renderText(text: String)
     }
 }
