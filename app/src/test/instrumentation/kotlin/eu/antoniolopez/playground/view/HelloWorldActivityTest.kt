@@ -3,14 +3,14 @@ package eu.antoniolopez.playground.view
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import eu.antoniolopez.playground.R
-import eu.antoniolopez.playground.di.appComponent
-import eu.antoniolopez.playground.presenter.MainPresenter
+import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
+import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
+import eu.antoniolopez.playground.feature.helloworld.view.HelloWorldActivity
 import io.mockk.clearAllMocks
 import io.mockk.mockk
 import org.junit.Before
@@ -22,18 +22,18 @@ import org.kodein.di.generic.provider
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-class MainActivityWithoutCoreViewTestingKodeinMockedTest {
+class HelloWorldActivityTest {
 
-    private val mockPresenter: MainPresenter = mockk(relaxed = true)
+    private val mockPresenter: HelloWorldPresenter = mockk(relaxed = true)
 
     @get:Rule
-    var activityScenarioRule = activityScenarioRule<MainActivity>()
+    var activityScenarioRule = activityScenarioRule<HelloWorldActivity>()
 
     @Before
     fun prepareKodein() {
         clearAllMocks()
-        appComponent.addConfig {
-            bind<MainPresenter>(overrides = true) with provider { mockPresenter }
+        featureComponent.addConfig {
+            bind<HelloWorldPresenter>(overrides = true) with provider { mockPresenter }
         }
     }
 
@@ -44,8 +44,8 @@ class MainActivityWithoutCoreViewTestingKodeinMockedTest {
 
     @Test
     fun checkButtonText() {
-        onView(withId(R.id.button_activity))
+        onView(withId(R.id.textToBeChanged))
             .perform(click())
-            .check(matches(withText("Navigate")))
+            .check(matches(withText("Hello world")))
     }
 }

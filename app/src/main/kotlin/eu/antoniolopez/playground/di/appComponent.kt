@@ -2,10 +2,10 @@ package eu.antoniolopez.playground.di
 
 import eu.antoniolopez.playground.core.di.coreComponent
 import eu.antoniolopez.playground.navigation.di.navigationModule
-import org.kodein.di.Kodein
+import org.kodein.di.conf.ConfigurableKodein
 
-internal val appComponent = Kodein {
-    extend(coreComponent)
-    import(navigationModule)
-    import(appModule)
+val appComponent = ConfigurableKodein(mutable = true).apply {
+    this.addExtend(coreComponent)
+    this.addImport(navigationModule)
+    this.addImport(appModule)
 }

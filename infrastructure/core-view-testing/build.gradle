@@ -1,11 +1,10 @@
 apply from: "${rootDir}/buildsystem/android-module.gradle"
-apply plugin: "de.mannodermaus.android-junit5"
 
 dependencies {
-    api kotlin_JDK8
-    api kotlin_reflect
-    api support
-    api appCompat
+    implementation kotlin_JDK8
+    //api kotlin_reflect
+    implementation support
+    implementation appCompat
     api test_core
     api test_rules
     api android_junit
@@ -19,10 +18,4 @@ dependencies {
     api kotlin_test_junit
     api assertJ
     */
-}
-
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }

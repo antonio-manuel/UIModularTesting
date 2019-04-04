@@ -79,5 +79,5 @@ dependencies {
     androidTestImplementation mockk_android
     //END TODO
 
-//    androidTestImplementation project(':infrastructure:core-view-testing') crashing when using it
+    //androidTestImplementation project(':infrastructure:core-view-testing')
 }
