@@ -6,7 +6,10 @@ import android.support.v4.app.FragmentManager
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import eu.antoniolopez.playground.core.view.testing.threading.CoroutineContextForTest
 import eu.antoniolopez.playground.core.view.testing.view.SingleFragmentActivity
+import eu.antoniolopez.playground.threading.APPLICATION_BG
+import eu.antoniolopez.playground.threading.APPLICATION_MAIN
 import io.mockk.clearAllMocks
 import org.junit.Before
 import org.junit.Rule
@@ -29,6 +32,8 @@ abstract class InstrumentationUnitTest {
 
     @Before
     fun onBefore() {
+        APPLICATION_MAIN = CoroutineContextForTest
+        APPLICATION_BG = CoroutineContextForTest
         clearAllMocks()
         setContentFragment()
         onPrepareBeforeEachTest()

@@ -34,8 +34,8 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
 
     @Test
     fun checkButtonText() {
-        onView(withId(R.id.buttonPanel))
+        onView(withId(R.id.changeTextBt))
             .perform(click())
-            .check(matches(withText("Clicked")))
+            .check(matches(withText("Change text")))
     }
 }
