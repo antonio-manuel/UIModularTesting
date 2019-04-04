@@ -7,14 +7,14 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
+import eu.antoniolopez.playground.feature.helloworld.R
 import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
 import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
 import eu.antoniolopez.playground.feature.helloworld.view.HelloWorldFragment
-import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
-import eu.antoniolopez.playground.feature.helloworld.R
+import io.mockk.mockk
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
 
@@ -25,12 +25,12 @@ import org.kodein.di.generic.singleton
  */
 class HelloWorldFragmentTest : InstrumentationUnitTest() {
 
-    private val mockPresenter : HelloWorldPresenter = HelloWorldPresenter()
+    private val mockPresenter : HelloWorldPresenter = mockk(relaxed = true)
 
     override fun onRequestFragment() = HelloWorldFragment.newInstance()
 
     override fun onPrepareBeforeEachTest() {
-        featureComponent = Kodein.invoke(allowSilentOverride = true) {
+        featureComponent.addConfig {
             bind<HelloWorldPresenter>(overrides = true) with singleton { mockPresenter }
         }
         super.onPrepareBeforeEachTest()
@@ -41,11 +41,5 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
         onView(withId(R.id.buttonPanel))
             .perform(click())
             .check(matches(withText("Clicked")))
-    }
-
-    @Test
-    fun itemInMiddleOfList_hasSpecialText() {
-        val appContext = ApplicationProvider.getApplicationContext<Application>()
-        assertEquals("eu.antoniolopez.playground.feature.helloworld", appContext.packageName)
     }
 }

@@ -7,8 +7,7 @@ import eu.antoniolopez.playground.navigation.command.helloworld.helloWorldNaviga
 
 class MainPresenter : LifecyclePresenter<MainPresenter.View>() {
 
-    override fun onViewAttached(firstTime: Boolean) {
-        super.onViewAttached(firstTime)
+    fun onButton() {
         view?.navigateTo(helloWorldNavigationCommand())
     }
 

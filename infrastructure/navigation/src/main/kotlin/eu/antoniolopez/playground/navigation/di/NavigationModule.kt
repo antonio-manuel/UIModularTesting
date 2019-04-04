@@ -6,6 +6,6 @@ import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
 
-val navigationModule = Kodein.Module(name = "NAVIGATION_MODULE") {
+val navigationModule = Kodein.Module(name = "navigationModule") {
     bind<Navigator>() with singleton { NavigatorImpl() }
 }

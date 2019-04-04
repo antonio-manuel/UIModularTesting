@@ -5,8 +5,8 @@ import eu.antoniolopez.playground.core.view.presentation.LifecyclePresenter
 
 class HelloWorldPresenter : LifecyclePresenter<HelloWorldPresenter.View>() {
 
-    fun onButton() {
-        view?.setText("Clicked")
+    fun onButton(text: String) {
+        view?.setText(text)
     }
 
     interface View : LifecycleView {

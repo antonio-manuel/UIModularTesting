@@ -2,15 +2,19 @@ package eu.antoniolopez.playground.core.view.testing
 
 import android.annotation.SuppressLint
 import android.support.v4.app.Fragment
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import com.nhaarman.mockitokotlin2.reset
+import io.mockk.clearAllMocks
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
+import org.junit.runner.RunWith
 
 //https://medium.com/@aitorvs/isolate-your-fragments-just-for-testing-ea7d4fddcba2
+@RunWith(AndroidJUnit4::class)
+@LargeTest
 abstract class InstrumentationUnitTest {
-    val mocksCache = mutableListOf<Any>()
 
     private val fragment by lazy {
         onRequestFragment()
@@ -25,24 +29,18 @@ abstract class InstrumentationUnitTest {
 
     @Before
     fun onBefore() {
-        reset(*mocksCache.toTypedArray())
+        clearAllMocks()
         onPrepareBeforeEachTest()
     }
 
     @After
     fun onAfterAll() {
-        mocksCache.clear()
+        testActivityRule.finishActivity()
     }
 
     @SuppressLint("RestrictedApi")
     @Before
     open fun onPrepareBeforeEachTest() {
         rule().activity.setFragment(fragment)
-    }
-
-    inline fun <reified T : Any> mock(): T {
-        val mockObject = com.nhaarman.mockitokotlin2.mock<T>()
-        mocksCache.add(mockObject)
-        return mockObject
     }
 }

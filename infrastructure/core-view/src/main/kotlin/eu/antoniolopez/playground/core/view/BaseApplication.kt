@@ -1,6 +1,7 @@
 package eu.antoniolopez.playground.core.view
 
 import android.app.Application
+import android.content.Context
 import android.os.StrictMode
 import eu.antoniolopez.playground.core.di.setApplicationContext
 import eu.antoniolopez.playground.core.logging.CrashReportingTree

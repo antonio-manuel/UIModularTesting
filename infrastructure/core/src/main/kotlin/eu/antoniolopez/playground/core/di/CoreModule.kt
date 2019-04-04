@@ -7,7 +7,7 @@ import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
 
-val coreModule = Kodein.Module(name = "CORE_MODULE") {
+val coreModule = Kodein.Module(name = "coreModule") {
     bind<Context>() with singleton {
         APPLICATION_CONTEXT ?: throw ContextException()
     }

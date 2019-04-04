@@ -9,6 +9,7 @@ dependencies {
     implementation constraint_layout
     implementation kotlin_JDK8
     implementation kodein
+    implementation kodein_conf
 
     androidTestImplementation project(':infrastructure:core-view-testing')
 }

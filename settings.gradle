@@ -1,9 +1,10 @@
 include ':app'
 include ':feature:hello-world'
 include ':infrastructure:core'
-include ':infrastructure:core-view'
 include ':infrastructure:core-testing'
-include ':infrastructure:core-view-testing'
-include ':infrastructure:navigation'
 include ':infrastructure:threading'
 include ':infrastructure:exceptions'
+include ':infrastructure:navigation'
+include ':infrastructure:core-view'
+include ':infrastructure:core-view-testing'
+

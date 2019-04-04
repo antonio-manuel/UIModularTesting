@@ -15,8 +15,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.base_activity)
         if (savedInstanceState == null) {
-            supportFragmentManager.attach(android.R.id.content, onRequestFragment())
+            supportFragmentManager.attach(R.id.content, onRequestFragment())
         }
     }
 

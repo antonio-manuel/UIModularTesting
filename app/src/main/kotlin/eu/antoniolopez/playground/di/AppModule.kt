@@ -5,6 +5,6 @@ import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.provider
 
-val appModule = Kodein.Module(name = "APP_MODULE") {
-    bind<MainPresenter>() with provider { MainPresenter() }
+val appModule = Kodein.Module(name = "appModule") {
+   bind<MainPresenter>() with provider { MainPresenter() }
 }

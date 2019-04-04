@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion project.compile_sdk_version
+    buildToolsVersion project.buildTools_version
+
     defaultConfig {
         applicationId "eu.antoniolopez.playground"
         minSdkVersion project.min_sdk_version
@@ -12,14 +14,13 @@ android {
         versionName project.version_name
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner project.test_inst_runner
-        testFunctionalTest true
     }
 
     sourceSets {
         main {
             main.java.srcDirs += 'src/main/kotlin'
             test.java.srcDirs += 'src/test/unitaries/kotlin'
-            androidTest.java.srcDirs += 'src/test/acceptance/kotlin'
+            androidTest.java.srcDirs += 'src/test/instrumentation/kotlin'
         }
     }
 
@@ -60,11 +61,23 @@ dependencies {
     implementation project(':infrastructure:navigation')
 
     implementation project(':feature:hello-world')
+
     implementation appCompat
     implementation design
     implementation constraint_layout
     implementation kotlin_JDK8
     implementation kodein
+    implementation kodein_conf
 
-    androidTestImplementation project(':infrastructure:core-view-testing')
+    //TODO delete once all merged
+    androidTestImplementation test_core
+    androidTestImplementation test_rules
+    androidTestImplementation android_junit
+    androidTestImplementation android_junit_ktx
+    androidTestImplementation espresso_core
+    androidTestImplementation mockk_core
+    androidTestImplementation mockk_android
+    //END TODO
+
+//    androidTestImplementation project(':infrastructure:core-view-testing') crashing when using it
 }

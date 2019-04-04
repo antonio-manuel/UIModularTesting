@@ -28,12 +28,12 @@ class HelloWorldFragment
     override fun onResume() {
         super.onResume()
         changeTextBt.onClickDebounced {
-            presenter.onButton()
+            presenter.onButton(editTextUserInput.text.toString())
             requireContext().hideKeyboardFrom(changeTextBt)
         }
     }
 
     override fun setText(text: String) {
-        changeTextBt.text = text
+        textToBeChanged.text = text
     }
 }
