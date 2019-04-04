@@ -24,7 +24,5 @@ class HelloWorldPresenterTest : UnitTest() {
         sut.onButton(text)
 
         verify { mockView.renderText(text) }
-        excludeRecords { mockView.lifecycle }
-        confirmVerified(mockView)
     }
 }
