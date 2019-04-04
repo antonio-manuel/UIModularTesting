@@ -44,12 +44,8 @@ ext {
 
     kotlin_test_junit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
     assertJ = "org.assertj:assertj-core:${assertj_version}"
-    mockito_android = "org.mockito:mockito-android:${mockito_core_version}"
-    mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockito_kotlin_version}"
-
     mockk_core = "io.mockk:mockk:${mockk_version}"
     mockk_android = "io.mockk:mockk-android:${mockk_version}"
-
     test_core = "androidx.test:core:${test_core_version}"
     test_core_ktx = "androidx.test:core-ktx:${test_core_version}"
     android_junit = "androidx.test.ext:junit:${android_junit_version}"

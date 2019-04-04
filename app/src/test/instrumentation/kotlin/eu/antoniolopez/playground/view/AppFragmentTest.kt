@@ -26,7 +26,7 @@ class AppFragmentTest : InstrumentationUnitTest() {
     }
 
     @Test
-    fun scrollToItemBelowFold_checkItsText() {
+    fun checkButtonText() {
         onView(ViewMatchers.withId(R.id.button_activity))
             .check(ViewAssertions.matches(ViewMatchers.withText("Navigate")))
     }

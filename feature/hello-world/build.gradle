@@ -11,5 +11,6 @@ dependencies {
     implementation kodein
     implementation kodein_conf
 
+    testImplementation project(':infrastructure:core-testing')
     androidTestImplementation project(':infrastructure:core-view-testing')
 }

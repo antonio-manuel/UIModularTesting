@@ -33,7 +33,7 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
     }
 
     @Test
-    fun scrollToItemBelowFold_checkItsText() {
+    fun checkButtonText() {
         onView(withId(R.id.buttonPanel))
             .perform(click())
             .check(matches(withText("Clicked")))
