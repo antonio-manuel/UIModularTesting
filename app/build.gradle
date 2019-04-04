@@ -69,15 +69,5 @@ dependencies {
     implementation kodein
     implementation kodein_conf
 
-    //TODO delete once all merged
-    androidTestImplementation test_core
-    androidTestImplementation test_rules
-    androidTestImplementation android_junit
-    androidTestImplementation android_junit_ktx
-    androidTestImplementation espresso_core
-    androidTestImplementation mockk_core
-    androidTestImplementation mockk_android
-    //END TODO
-
-    //androidTestImplementation project(':infrastructure:core-view-testing')
+    androidTestImplementation project(':infrastructure:core-view-testing')
 }

@@ -1,4 +1,4 @@
-package eu.antoniolopez.playground.core.view.testing
+package eu.antoniolopez.playground.core.view.testing.view
 
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.annotation.RestrictTo
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import eu.antoniolopez.playground.R
+import eu.antoniolopez.playground.core.view.testing.R
 
 /**
  * Used as container to test fragments in isolation with Espresso

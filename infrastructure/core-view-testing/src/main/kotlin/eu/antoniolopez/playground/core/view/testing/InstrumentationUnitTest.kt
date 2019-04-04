@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
+import eu.antoniolopez.playground.core.view.testing.view.SingleFragmentActivity
 import io.mockk.clearAllMocks
 import org.junit.After
 import org.junit.Before
