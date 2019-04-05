@@ -41,7 +41,6 @@ abstract class InstrumentationUnitTest {
 
     open fun onPrepareBeforeEachTest() {}
 
-
     private fun FragmentManager.attach(@IdRes placeHolder: Int, fragment: Fragment) {
         val tag = getTag(fragment::class)
         beginTransaction()

@@ -26,7 +26,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -46,7 +45,6 @@ android {
     packagingOptions {
         pickFirst 'META-INF/LICENSE.md'
         pickFirst 'META-INF/LICENSE-notice.md'
-        pickFirst 'mockito-extensions/org.mockito.plugins.MockMaker'
         exclude 'META-INF/proguard/androidx-annotations.pro'
     }
 
