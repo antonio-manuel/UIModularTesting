@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/goodbye-world" />
             <option value="$PROJECT_DIR$/feature/hello-world" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/core" />

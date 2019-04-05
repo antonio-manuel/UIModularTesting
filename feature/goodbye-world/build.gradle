@@ -1,0 +1,17 @@
+apply from: "${rootDir}/buildsystem/android-module.gradle"
+
+dependencies {
+    implementation project(':infrastructure:core')
+    implementation project(':infrastructure:core-view')
+    implementation project(':infrastructure:navigation')
+
+    implementation appCompat
+    implementation design
+    implementation constraint_layout
+    implementation kotlin_JDK8
+    implementation kodein
+    implementation kodein_conf
+
+    testImplementation project(':infrastructure:core-testing')
+    androidTestImplementation project(':infrastructure:core-view-testing')
+}

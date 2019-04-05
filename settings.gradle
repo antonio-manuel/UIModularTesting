@@ -1,5 +1,6 @@
 include ':app'
 include ':feature:hello-world'
+include ':feature:goodbye-world'
 include ':infrastructure:core'
 include ':infrastructure:core-testing'
 include ':infrastructure:threading'
