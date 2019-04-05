@@ -24,7 +24,6 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
         featureComponent.addConfig {
             bind<HelloWorldPresenter>(overrides = true) with singleton { mockPresenter }
         }
-        super.onPrepareBeforeEachTest()
     }
 
     @Test

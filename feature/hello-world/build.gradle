@@ -4,6 +4,7 @@ dependencies {
     implementation project(':infrastructure:core')
     implementation project(':infrastructure:core-view')
     implementation project(':infrastructure:navigation')
+
     implementation appCompat
     implementation design
     implementation constraint_layout
