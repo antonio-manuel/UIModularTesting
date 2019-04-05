@@ -3,12 +3,11 @@ apply plugin: "de.mannodermaus.android-junit5"
 
 dependencies {
     implementation project(':infrastructure:threading')
+
     implementation kotlin_JDK8
     implementation kotlin_reflect
-    api test_core
-    api test_core_ktx
-    api test_runner
-    api test_rules
+    api jupiter_api
+    api jupiter_engine
     api mockk_core
     api mockk_android
     api kotlin_test_junit
