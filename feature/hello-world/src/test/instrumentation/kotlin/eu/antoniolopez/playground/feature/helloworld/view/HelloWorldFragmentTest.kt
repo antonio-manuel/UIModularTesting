@@ -9,6 +9,7 @@ import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
 import eu.antoniolopez.playground.feature.helloworld.R
 import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
 import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
+import eu.antoniolopez.playground.navigation.Navigator
 import io.mockk.mockk
 import org.junit.Test
 import org.kodein.di.generic.bind
@@ -17,12 +18,14 @@ import org.kodein.di.generic.singleton
 class HelloWorldFragmentTest : InstrumentationUnitTest() {
 
     private val mockPresenter : HelloWorldPresenter = mockk(relaxed = true)
+    private val mockNavigator: Navigator = mockk(relaxed = true)
 
     override fun onRequestFragment() = HelloWorldFragment.newInstance()
 
     override fun onPrepareBeforeEachTest() {
         featureComponent.addConfig {
             bind<HelloWorldPresenter>(overrides = true) with singleton { mockPresenter }
+            bind<Navigator>(overrides = true) with singleton { mockNavigator }
         }
     }
 

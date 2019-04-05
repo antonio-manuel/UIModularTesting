@@ -1,15 +1,14 @@
-package eu.antoniolopez.playground.navigation.command.helloworld
+package eu.antoniolopez.playground.navigation.command.goodbyeworld
 
-import android.content.Intent
 import android.net.Uri
 import eu.antoniolopez.playground.navigation.NavigationCommand
 import eu.antoniolopez.playground.navigation.command.Command
 
-val helloWorldNavigationCommand: () -> NavigationCommand = {
+val goodbyeWorldNavigationCommand: () -> NavigationCommand = {
     val command: NavigationCommand = { scheme ->
         val uri = Uri.Builder()
             .scheme(scheme)
-            .authority("helloworld")
+            .authority("goodbyeworld")
             .build()
         Command(uri = uri)
     }

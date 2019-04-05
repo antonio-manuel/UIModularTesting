@@ -25,4 +25,13 @@ class GoodbyeWorldPresenterTest : UnitTest() {
 
         verify { mockView.renderText(text) }
     }
+
+    @Test
+    fun `on navigate clicked then view navigates`() {
+        sut.onViewReady(mockView)
+
+        sut.onNavigate()
+
+        verify { mockView.navigateTo(any()) }
+    }
 }

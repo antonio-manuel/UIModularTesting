@@ -7,6 +7,8 @@ import eu.antoniolopez.playground.core.view.extension.onClickDebounced
 import eu.antoniolopez.playground.feature.goodbyeworld.R
 import eu.antoniolopez.playground.feature.goodbyeworld.di.featureComponent
 import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeWorldPresenter
+import eu.antoniolopez.playground.navigation.NavigationCommand
+import eu.antoniolopez.playground.navigation.Navigator
 import kotlinx.android.synthetic.main.fragment_button.*
 import org.kodein.di.generic.instance
 
@@ -18,6 +20,7 @@ class GoodbyeWorldFragment
     }
 
     private val presenter: GoodbyeWorldPresenter by featureComponent.instance()
+    private val navigator: Navigator by featureComponent.instance()
 
     override fun onRequestLayoutResourceId(): Int = R.layout.fragment_button
 
@@ -31,9 +34,15 @@ class GoodbyeWorldFragment
             presenter.onButton(editTextUserInput.text.toString())
             requireContext().hideKeyboardFrom(changeTextBt)
         }
+        navigateBt.onClickDebounced { presenter.onNavigate() }
     }
 
     override fun renderText(text: String) {
         textToBeChanged.text = text
+    }
+
+    override fun navigateTo(command: NavigationCommand) {
+        navigator.navigate(requireContext(), command)
+        requireActivity().finish()
     }
 }

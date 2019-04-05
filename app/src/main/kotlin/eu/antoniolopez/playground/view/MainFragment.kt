@@ -29,5 +29,6 @@ class MainFragment : BaseFragment(), MainPresenter.View {
 
     override fun navigateTo(command: NavigationCommand) {
         navigator.navigate(requireContext(), command)
+        requireActivity().finish()
     }
 }

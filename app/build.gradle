@@ -63,6 +63,7 @@ dependencies {
     implementation project(':infrastructure:navigation')
 
     implementation project(':feature:hello-world')
+    implementation project(':feature:goodbye-world')
 
     implementation appCompat
     implementation design
