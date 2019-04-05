@@ -3,6 +3,12 @@ ext {
     anko_version = "0.10.8"
     arrow_version = "0.9.0"
 
+    //Android
+    constraint_version = "1.1.3"
+
+    //Logging
+    timber_version = "4.7.1"
+
     //DI
     kodein_version = "6.1.0"
 
@@ -16,39 +22,37 @@ ext {
     android_junit_version = "1.1.0"
     android_junit_ktx_version = "1.1.0"
 
-    //Android
-    constraint_version = "1.1.3"
-
-    //Logging
-    timber_version = "4.7.1"
-
-    anko_common = "org.jetbrains.anko:anko-commons:${anko_version}"
-    anko_coroutines = "org.jetbrains.anko:anko-coroutines:${anko_version}"
+    kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
+    kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
     appCompat = "com.android.support:appcompat-v7:${project.support_version}"
     design = "com.android.support:design:${project.support_version}"
     support = "com.android.support:support-core-utils:${project.support_version}"
-    cardview = "com.android.support:cardview-v7:${project.support_version}"
     constraint_layout = "com.android.support.constraint:constraint-layout:${constraint_version}"
     coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
     coroutines_common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${coroutines_version}"
     coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_version}"
     coroutines_reactive = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${coroutines_version}"
+    anko_common = "org.jetbrains.anko:anko-commons:${anko_version}"
+    anko_coroutines = "org.jetbrains.anko:anko-coroutines:${anko_version}"
     kodein = "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
     kodein_conf = "org.kodein.di:kodein-di-conf-jvm:${kodein_version}"
-    kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
-    kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
     timber = "com.jakewharton.timber:timber:${timber_version}"
     arrow_datatypes = "io.arrow-kt:arrow-core-data:${arrow_version}"
 
-    kotlin_test_junit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
-    assertJ = "org.assertj:assertj-core:${assertj_version}"
+    //Common Test
     mockk_core = "io.mockk:mockk:${mockk_version}"
     mockk_android = "io.mockk:mockk-android:${mockk_version}"
+
+    //Unit Test
     jupiter_api = "org.junit.jupiter:junit-jupiter-api:${jupiter_version}"
     jupiter_engine = "org.junit.jupiter:junit-jupiter-engine:${jupiter_version}"
+    assertJ = "org.assertj:assertj-core:${assertj_version}"
+    kotlin_test_junit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
+
+    //Instrumentation Test
     test_core = "androidx.test:core:${test_core_version}"
+    test_rules = "androidx.test:rules:${test_rules_version}"
     android_junit = "androidx.test.ext:junit:${android_junit_version}"
     android_junit_ktx = "androidx.test.ext:junit-ktx:${android_junit_ktx_version}"
-    test_rules = "androidx.test:rules:${test_rules_version}"
     espresso_core = "androidx.test.espresso:espresso-core:${expresso_core_version}"
 }
