@@ -9,7 +9,7 @@ import eu.antoniolopez.playground.feature.goodbyeworld.di.featureComponent
 import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeWorldPresenter
 import eu.antoniolopez.playground.navigation.NavigationCommand
 import eu.antoniolopez.playground.navigation.Navigator
-import kotlinx.android.synthetic.main.fragment_button.*
+import kotlinx.android.synthetic.main.goodbye_fragment.*
 import org.kodein.di.generic.instance
 
 class GoodbyeWorldFragment
@@ -22,7 +22,7 @@ class GoodbyeWorldFragment
     private val presenter: GoodbyeWorldPresenter by featureComponent.instance()
     private val navigator: Navigator by featureComponent.instance()
 
-    override fun onRequestLayoutResourceId(): Int = R.layout.fragment_button
+    override fun onRequestLayoutResourceId(): Int = R.layout.goodbye_fragment
 
     override fun onViewReady(savedInstanceState: Bundle?) {
         presenter.onViewReady(this)

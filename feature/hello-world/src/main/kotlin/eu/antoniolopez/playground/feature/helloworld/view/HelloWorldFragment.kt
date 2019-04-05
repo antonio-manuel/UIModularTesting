@@ -9,7 +9,7 @@ import eu.antoniolopez.playground.feature.helloworld.di.featureComponent
 import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
 import eu.antoniolopez.playground.navigation.NavigationCommand
 import eu.antoniolopez.playground.navigation.Navigator
-import kotlinx.android.synthetic.main.fragment_button.*
+import kotlinx.android.synthetic.main.hello_fragment.*
 import org.kodein.di.generic.instance
 
 class HelloWorldFragment
@@ -22,7 +22,7 @@ class HelloWorldFragment
     private val presenter: HelloWorldPresenter by featureComponent.instance()
     private val navigator: Navigator by featureComponent.instance()
 
-    override fun onRequestLayoutResourceId(): Int = R.layout.fragment_button
+    override fun onRequestLayoutResourceId(): Int = R.layout.hello_fragment
 
     override fun onViewReady(savedInstanceState: Bundle?) {
         presenter.onViewReady(this)
