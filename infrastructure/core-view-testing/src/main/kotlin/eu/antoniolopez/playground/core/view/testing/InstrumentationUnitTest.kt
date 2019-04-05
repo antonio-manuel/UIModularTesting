@@ -4,7 +4,7 @@ import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import androidx.test.ext.junit.rules.activityScenarioRule
-import androidx.test.filters.SmallTest
+import androidx.test.filters.MediumTest
 import eu.antoniolopez.playground.core.view.testing.threading.CoroutineContextForTest
 import eu.antoniolopez.playground.core.view.testing.view.SingleFragmentActivity
 import eu.antoniolopez.playground.threading.APPLICATION_BG
@@ -16,7 +16,7 @@ import org.junit.Rule
 import kotlin.reflect.KClass
 
 //https://medium.com/@aitorvs/isolate-your-fragments-just-for-testing-ea7d4fddcba2
-@SmallTest
+@MediumTest
 abstract class InstrumentationUnitTest {
 
     @get:Rule
