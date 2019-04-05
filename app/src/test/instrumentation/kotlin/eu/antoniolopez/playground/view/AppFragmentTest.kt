@@ -7,6 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import eu.antoniolopez.playground.R
 import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
 import eu.antoniolopez.playground.di.appComponent
+import eu.antoniolopez.playground.navigation.Navigator
 import eu.antoniolopez.playground.presenter.MainPresenter
 import io.mockk.mockk
 import org.junit.Test
@@ -16,12 +17,14 @@ import org.kodein.di.generic.singleton
 class AppFragmentTest : InstrumentationUnitTest() {
 
     private val mockPresenter: MainPresenter = mockk(relaxed = true)
+    private val mockNavigator: Navigator = mockk(relaxed = true)
 
     override fun onRequestFragment() = MainFragment.newInstance()
 
     override fun onPrepareBeforeEachTest() {
         appComponent.addConfig {
             bind<MainPresenter>(overrides = true) with singleton { mockPresenter }
+            bind<Navigator>(overrides = true) with singleton { mockNavigator }
         }
     }
 
@@ -32,4 +35,3 @@ class AppFragmentTest : InstrumentationUnitTest() {
             .check(ViewAssertions.matches(ViewMatchers.withText("Navigate")))
     }
 }
-
