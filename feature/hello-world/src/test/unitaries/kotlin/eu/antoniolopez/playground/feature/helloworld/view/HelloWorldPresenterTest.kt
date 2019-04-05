@@ -3,6 +3,7 @@ package eu.antoniolopez.playground.feature.helloworld.view
 import eu.antoniolopez.playground.core.testing.UnitTest
 import eu.antoniolopez.playground.core.view.lifecycle.LifecycleStream
 import eu.antoniolopez.playground.feature.helloworld.presenter.HelloWorldPresenter
+import eu.antoniolopez.playground.navigation.command.goodbyeworld.goodbyeWorldNavigationCommand
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -29,11 +30,11 @@ class HelloWorldPresenterTest : UnitTest() {
     }
 
     @Test
-    fun `on navigate clicked then view navigates`() {
+    fun `on navigate clicked then view navigates to goodbye commannd`() {
         sut.onViewReady(mockView)
 
         sut.onNavigate()
 
-        verify { mockView.navigateTo(any()) }
+        verify { mockView.navigateTo(eq(goodbyeWorldNavigationCommand())) }
     }
 }
