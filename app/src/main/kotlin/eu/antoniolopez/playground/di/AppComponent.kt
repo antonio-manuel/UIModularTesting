@@ -9,3 +9,4 @@ val appComponent = ConfigurableKodein(mutable = true).apply {
     this.addImport(navigationModule)
     this.addImport(appModule)
 }
+
