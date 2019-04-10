@@ -14,7 +14,7 @@ ext {
 
     //Testing
     mockk_version = "1.9.2"
-    jupiter_version = "5.4.1"
+    jupiter_version = "5.4.2"
     assertj_version = "3.12.2"
     expresso_core_version = "3.1.1"
     test_core_version = "1.1.0"
@@ -23,7 +23,6 @@ ext {
     android_junit_ktx_version = "1.1.0"
 
     kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
-    kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
     appCompat = "com.android.support:appcompat-v7:${project.support_version}"
     design = "com.android.support:design:${project.support_version}"
     support = "com.android.support:support-core-utils:${project.support_version}"

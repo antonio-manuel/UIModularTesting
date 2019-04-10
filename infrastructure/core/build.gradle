@@ -5,7 +5,6 @@ dependencies {
     implementation project(":infrastructure:exceptions")
 
     implementation kotlin_JDK8
-    implementation kotlin_reflect
     implementation kodein
     // Log
     implementation timber
