@@ -21,7 +21,7 @@ class AppFragmentTest : InstrumentationUnitTest() {
 
     override fun onRequestFragment() = MainFragment.newInstance()
 
-    override fun onPrepareBeforeEachTest() {
+    override fun onPrepareInjection() {
         appComponent.addConfig {
             bind<MainPresenter>(overrides = true) with singleton { mockPresenter }
             bind<Navigator>(overrides = true) with singleton { mockNavigator }

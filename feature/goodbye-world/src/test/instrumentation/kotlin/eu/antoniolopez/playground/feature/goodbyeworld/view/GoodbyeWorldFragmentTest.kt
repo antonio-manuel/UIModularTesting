@@ -22,7 +22,7 @@ class GoodbyeWorldFragmentTest : InstrumentationUnitTest() {
 
     override fun onRequestFragment() = GoodbyeWorldFragment.newInstance()
 
-    override fun onPrepareBeforeEachTest() {
+    override fun onPrepareInjection() {
         featureComponent.addConfig {
             bind<GoodbyeWorldPresenter>(overrides = true) with singleton { mockPresenter }
             bind<Navigator>(overrides = true) with singleton { mockNavigator }

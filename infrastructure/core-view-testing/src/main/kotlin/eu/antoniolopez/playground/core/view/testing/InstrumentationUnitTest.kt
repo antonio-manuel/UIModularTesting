@@ -29,8 +29,9 @@ abstract class InstrumentationUnitTest {
         APPLICATION_MAIN = Dispatchers.Main
         APPLICATION_BG = CoroutineContextForTest
         clearAllMocks()
-        setContentFragment()
+        onPrepareInjection()
         onPrepareBeforeEachTest()
+        setContentFragment()
     }
 
     private fun setContentFragment() {
@@ -38,6 +39,8 @@ abstract class InstrumentationUnitTest {
             activity.supportFragmentManager.attach(android.R.id.content, onRequestFragment())
         }
     }
+
+    open fun onPrepareInjection() {}
 
     open fun onPrepareBeforeEachTest() {}
 

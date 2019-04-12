@@ -22,7 +22,7 @@ class HelloWorldFragmentTest : InstrumentationUnitTest() {
 
     override fun onRequestFragment() = HelloWorldFragment.newInstance()
 
-    override fun onPrepareBeforeEachTest() {
+    override fun onPrepareInjection() {
         featureComponent.addConfig {
             bind<HelloWorldPresenter>(overrides = true) with singleton { mockPresenter }
             bind<Navigator>(overrides = true) with singleton { mockNavigator }
