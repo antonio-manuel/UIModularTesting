@@ -7,7 +7,7 @@ import eu.antoniolopez.playground.navigation.command.goodbyeworld.goodbyeWorldNa
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class HelloWorldPresenterTest : UnitTest() {
 

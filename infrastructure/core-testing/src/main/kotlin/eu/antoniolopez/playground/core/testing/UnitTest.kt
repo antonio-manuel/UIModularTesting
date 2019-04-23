@@ -6,19 +6,21 @@ import eu.antoniolopez.playground.threading.APPLICATION_MAIN
 import io.mockk.clearAllMocks
 import org.junit.After
 import org.junit.Before
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.TestInstance
 
 @Suppress("IllegalIdentifier")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 abstract class UnitTest {
-    @Before
+    @BeforeEach
     fun onBefore() {
         APPLICATION_MAIN = CoroutineContextForTest
         APPLICATION_BG = CoroutineContextForTest
         onPrepareBeforeEachTest()
     }
 
-    @After
+    @AfterEach
     fun onAfter() {
         clearAllMocks()
     }
