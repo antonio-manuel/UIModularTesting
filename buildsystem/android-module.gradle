@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "de.mannodermaus.android-junit5"
 
 android {
     compileSdkVersion project.compile_sdk_version
@@ -39,7 +40,6 @@ android {
 
     testOptions {
         animationsDisabled = true
-        unitTests.returnDefaultValues = true
     }
 
     packagingOptions {

@@ -1,5 +1,5 @@
 ext {
-    coroutines_version = "1.1.1"
+    coroutines_version = "1.2.0"
     anko_version = "0.10.8"
     arrow_version = "0.9.0"
 
@@ -9,8 +9,13 @@ ext {
     //Logging
     timber_version = "4.7.1"
 
+    // Retrofit
+    retrofit_version = "2.5.0"
+    okHttp_version = "3.14.1"
+    moshi_version = "1.8.0"
+
     //DI
-    kodein_version = "6.1.0"
+    kodein_version = "6.2.0"
 
     //Testing
     mockk_version = "1.9.2"
@@ -26,6 +31,7 @@ ext {
     appCompat = "com.android.support:appcompat-v7:${project.support_version}"
     design = "com.android.support:design:${project.support_version}"
     support = "com.android.support:support-core-utils:${project.support_version}"
+    support_annotations = "com.android.support:support-annotations:${project.support_version}"
     constraint_layout = "com.android.support.constraint:constraint-layout:${constraint_version}"
     coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
     coroutines_common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${coroutines_version}"
@@ -35,6 +41,13 @@ ext {
     anko_coroutines = "org.jetbrains.anko:anko-coroutines:${anko_version}"
     kodein = "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
     kodein_conf = "org.kodein.di:kodein-di-conf-jvm:${kodein_version}"
+    retrofit = "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    retrofit_moshi_converter = "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    okHttp = "com.squareup.okhttp3:okhttp:${okHttp_version}"
+    okhttp_logging = "com.squareup.okhttp3:logging-interceptor:${okHttp_version}"
+    moshi = "com.squareup.moshi:moshi:${moshi_version}"
+    moshi_adapters = "com.squareup.moshi:moshi-adapters:${moshi_version}"
+    moshi_kotlin = "com.squareup.moshi:moshi-kotlin:${moshi_version}"
     timber = "com.jakewharton.timber:timber:${timber_version}"
     arrow_datatypes = "io.arrow-kt:arrow-core-data:${arrow_version}"
 
