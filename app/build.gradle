@@ -65,7 +65,7 @@ dependencies {
     implementation project(':feature:hello-world')
     implementation project(':feature:goodbye-world')
 
-    implementation appCompat
+    implementation app_compat
     implementation design
     implementation constraint_layout
     implementation kotlin_JDK8

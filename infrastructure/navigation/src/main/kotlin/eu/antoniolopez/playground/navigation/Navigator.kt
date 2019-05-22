@@ -1,7 +1,7 @@
 package eu.antoniolopez.playground.navigation
 
 import android.content.Context
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import arrow.core.Try
 import eu.antoniolopez.playground.navigation.command.Command
 

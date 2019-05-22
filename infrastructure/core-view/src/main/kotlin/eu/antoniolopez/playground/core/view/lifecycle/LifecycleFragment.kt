@@ -1,7 +1,7 @@
 package eu.antoniolopez.playground.core.view.lifecycle
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import eu.antoniolopez.playground.core.view.lifecycle.LifecycleView.Lifecycle
 import kotlinx.coroutines.channels.ReceiveChannel
 

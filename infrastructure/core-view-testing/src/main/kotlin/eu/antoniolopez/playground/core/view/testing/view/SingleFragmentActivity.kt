@@ -1,7 +1,7 @@
 package eu.antoniolopez.playground.core.view.testing.view
 
-import android.support.annotation.RestrictTo
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.RestrictTo
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Used as container to test fragments in isolation with Espresso

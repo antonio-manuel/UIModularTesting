@@ -1,8 +1,8 @@
 package eu.antoniolopez.playground.core.view.extension
 
-import android.support.annotation.NonNull
-import android.support.design.widget.BottomSheetBehavior
 import android.view.View
+import androidx.annotation.NonNull
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 inline fun <reified T : View> BottomSheetBehavior<T>.onStateChanged(crossinline onStageChanged: (Int) -> Unit) {
     setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {

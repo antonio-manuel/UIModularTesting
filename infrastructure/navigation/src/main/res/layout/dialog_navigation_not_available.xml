@@ -9,7 +9,7 @@
         android:orientation="vertical"
         tools:layout_gravity="center">
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -18,7 +18,7 @@
             android:tint="#333333"
             app:srcCompat="@drawable/ic_navigation_not_available"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

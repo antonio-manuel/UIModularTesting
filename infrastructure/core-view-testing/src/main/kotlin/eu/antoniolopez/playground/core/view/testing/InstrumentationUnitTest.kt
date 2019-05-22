@@ -1,8 +1,8 @@
 package eu.antoniolopez.playground.core.view.testing
 
-import android.support.annotation.IdRes
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
+import androidx.annotation.IdRes
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.filters.MediumTest
 import eu.antoniolopez.playground.core.view.testing.threading.CoroutineContextForTest

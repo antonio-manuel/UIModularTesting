@@ -3,11 +3,11 @@ package eu.antoniolopez.playground.core.view
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.fragment.app.DialogFragment
 import eu.antoniolopez.playground.core.view.lifecycle.LifecycleFragment
 import java.io.Serializable
 

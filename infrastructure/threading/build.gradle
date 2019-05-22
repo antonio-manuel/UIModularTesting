@@ -4,7 +4,6 @@ dependencies {
     implementation project(':infrastructure:exceptions')
 
     implementation kotlin_JDK8
-    api anko_coroutines
     api coroutines_core
     api coroutines_reactive
     api coroutines_common

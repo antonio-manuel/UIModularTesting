@@ -1,6 +1,10 @@
 ext {
-    coroutines_version = "1.2.0"
-    anko_version = "0.10.8"
+    android_ktx_version = "1.0.2"
+    support_version = "1.0.2"
+    support_version_for_material = "1.0.0"
+    recycler_version = "1.0.0"
+
+    coroutines_version = "1.2.1"
     arrow_version = "0.9.0"
 
     //Android
@@ -11,7 +15,7 @@ ext {
 
     // Retrofit
     retrofit_version = "2.5.0"
-    okHttp_version = "3.14.1"
+    okHttp_version = "3.14.2"
     moshi_version = "1.8.0"
 
     //DI
@@ -28,17 +32,19 @@ ext {
     android_junit_ktx_version = "1.1.0"
 
     kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
-    appCompat = "com.android.support:appcompat-v7:${project.support_version}"
-    design = "com.android.support:design:${project.support_version}"
-    support = "com.android.support:support-core-utils:${project.support_version}"
-    support_annotations = "com.android.support:support-annotations:${project.support_version}"
-    constraint_layout = "com.android.support.constraint:constraint-layout:${constraint_version}"
+
+    ktx = "androidx.core:core-ktx:${android_ktx_version}"
+    androidx_core = "androidx.core:core:${support_version}"
+    app_compat = "androidx.appcompat:appcompat:${support_version}"
+    support_annotations = "androidx.annotation:annotation:${support_version}"
+    design = "com.google.android.material:material:${support_version_for_material}"
+    recycler_view = "androidx.recyclerview:recyclerview:${recycler_version}"
+    cardview = "androidx.cardview:cardview:${support_version}"
+    constraint_layout = "androidx.constraintlayout:constraintlayout:${constraint_version}"
     coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
     coroutines_common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${coroutines_version}"
     coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_version}"
     coroutines_reactive = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${coroutines_version}"
-    anko_common = "org.jetbrains.anko:anko-commons:${anko_version}"
-    anko_coroutines = "org.jetbrains.anko:anko-coroutines:${anko_version}"
     kodein = "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
     kodein_conf = "org.kodein.di:kodein-di-conf-jvm:${kodein_version}"
     retrofit = "com.squareup.retrofit2:retrofit:${retrofit_version}"

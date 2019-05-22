@@ -12,14 +12,15 @@ dependencies {
     implementation project(":infrastructure:exceptions")
 
     // Views
-    implementation appCompat
-    implementation design
+    api app_compat
+    api design
+    api androidx_core
+    implementation ktx
     implementation constraint_layout
 
     // Dependency injection
     implementation kodein
 
-    api anko_common
     api arrow_datatypes
 
     // Log

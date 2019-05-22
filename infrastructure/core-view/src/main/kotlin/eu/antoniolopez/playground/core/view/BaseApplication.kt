@@ -53,7 +53,9 @@ abstract class BaseApplication : Application(), KodeinAware {
     }
 
     private fun setupThreadingContexts() {
-        APPLICATION_MAIN = Dispatchers.Main
+        APPLICATION_MAIN = Dispatchers.Main + CoroutineExceptionHandler { _, error ->
+            throw error
+        }
         APPLICATION_BG = newFixedThreadPoolContext(
             2 * Runtime.getRuntime().availableProcessors(),
             "bg"

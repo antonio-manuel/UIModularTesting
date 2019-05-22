@@ -1,8 +1,8 @@
 package eu.antoniolopez.playground.core.view
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import eu.antoniolopez.playground.core.view.callback.OnBackPressed
 import eu.antoniolopez.playground.core.view.extension.attach
 

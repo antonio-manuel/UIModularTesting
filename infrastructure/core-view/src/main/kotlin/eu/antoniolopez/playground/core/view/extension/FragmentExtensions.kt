@@ -1,9 +1,9 @@
 package eu.antoniolopez.playground.core.view.extension
 
-import android.support.annotation.IdRes
-import android.support.v4.app.Fragment
+import androidx.annotation.IdRes
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import arrow.core.Option
-import org.jetbrains.anko.bundleOf
 
 const val DIALOG_TAG = "dialog"
 
