@@ -34,7 +34,7 @@ class HelloWorldFragment
             presenter.onButton(editTextUserInput.text.toString())
             requireContext().hideKeyboardFrom(changeTextBt)
         }
-        navigateBt.onClickDebounced { presenter.onNavigate() }
+        navigate.onClickDebounced { presenter.onNavigate() }
     }
 
     override fun renderText(text: String) {
