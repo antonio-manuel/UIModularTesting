@@ -2,7 +2,6 @@ ext {
     android_ktx_version = "1.0.2"
     support_version = "1.0.2"
     support_version_for_material = "1.0.0"
-    recycler_version = "1.0.0"
 
     coroutines_version = "1.2.1"
     arrow_version = "0.9.0"
@@ -38,8 +37,6 @@ ext {
     app_compat = "androidx.appcompat:appcompat:${support_version}"
     support_annotations = "androidx.annotation:annotation:${support_version}"
     design = "com.google.android.material:material:${support_version_for_material}"
-    recycler_view = "androidx.recyclerview:recyclerview:${recycler_version}"
-    cardview = "androidx.cardview:cardview:${support_version}"
     constraint_layout = "androidx.constraintlayout:constraintlayout:${constraint_version}"
     coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
     coroutines_common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${coroutines_version}"
