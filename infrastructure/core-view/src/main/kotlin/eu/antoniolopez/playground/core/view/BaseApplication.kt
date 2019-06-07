@@ -1,7 +1,6 @@
 package eu.antoniolopez.playground.core.view
 
 import android.app.Application
-import android.content.Context
 import android.os.StrictMode
 import eu.antoniolopez.playground.core.di.setApplicationContext
 import eu.antoniolopez.playground.core.logging.CrashReportingTree
@@ -9,7 +8,6 @@ import eu.antoniolopez.playground.threading.APPLICATION_BG
 import eu.antoniolopez.playground.threading.APPLICATION_MAIN
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.newFixedThreadPoolContext
 import org.kodein.di.KodeinAware
 import timber.log.Timber
 
@@ -53,12 +51,7 @@ abstract class BaseApplication : Application(), KodeinAware {
     }
 
     private fun setupThreadingContexts() {
-        APPLICATION_MAIN = Dispatchers.Main + CoroutineExceptionHandler { _, error ->
-            throw error
-        }
-        APPLICATION_BG = newFixedThreadPoolContext(
-            2 * Runtime.getRuntime().availableProcessors(),
-            "bg"
-        ) + CoroutineExceptionHandler { _, error -> throw error }
+        APPLICATION_MAIN = Dispatchers.Main + CoroutineExceptionHandler { _, error -> throw error }
+        APPLICATION_BG = Dispatchers.Default + CoroutineExceptionHandler { _, error -> throw error }
     }
 }
