@@ -50,7 +50,7 @@ abstract class InstrumentationUnitTest {
         val tag = getTag(fragment::class)
         beginTransaction()
             .replace(placeHolder, fragment, tag)
-            .commitNow()
+            .commitAllowingStateLoss()
     }
 
     private fun getTag(type: KClass<*>): String = type.java.name
