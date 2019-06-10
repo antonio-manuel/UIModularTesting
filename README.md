@@ -9,7 +9,7 @@ If you want to explore deeper how we face this modularisation you can check this
 - **Feature**: with all the feature modules our app will contain.
 - **Infrastructure**: with core and common modules.
 
-![Project structure](https://github.com/antonio-manuel/UIModularTesting/raw/master/assets/01_project_structure.png) 
+![Project structure](assets/01_project_structure.png) 
 
 In our projects activities are no more than simple containers, we delegate our lifecycles to Fragments. Depending on the complexity of a feature we can have a single Fragment or a composer Fragment that orchestrates smaller Fragments inside it.
 
@@ -34,15 +34,15 @@ We based our solution in a [post of Aitor Viana](https://medium.com/@aitorvs/iso
 
 That way we have a base UI Unit Test class with the coroutines context initialisation, cleaned of mocks, creation and attachment of target Fragment and 2 open functions: one to override dependency injection and the other to initialise mocks.
 
-![Base UI Unit Test class](https://github.com/antonio-manuel/UIModularTesting/raw/master/assets/02_base_unittest_class.png)
+![Base UI Unit Test class](assets/02_base_unittest_class.png)
  
 This relies on a Activity which only purpose is to attach the target Fragment to launch in the UI Test:
 
-![Dummy Fragment container Activity](https://github.com/antonio-manuel/UIModularTesting/raw/master/assets/03_fragment_container.png)
+![Dummy Fragment container Activity](assets/03_fragment_container.png)
  
 So we can see how will look an example implementing this tools:
 
-![Example of a UI Unit Test class](https://github.com/antonio-manuel/UIModularTesting/raw/master/assets/04_use_example.png)
+![Example of a UI Unit Test class](assets/04_use_example.png)
  
 With that, we are able to add UI Unit Test separately in each one of our feature modules, making them independents of the app module.
 
