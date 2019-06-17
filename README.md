@@ -6,7 +6,7 @@ In Metropolis-lab, we talked about what would be a good UI testing approach. Our
 We are following [clean code architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) with MVP. Recently, we migrated to new [AndroidX](https://developer.android.com/jetpack/androidx) libraries provided by Google, so views, Fragments and Activities are based on these new libraries. We are managing dependency injection with [Kodein](https://kodein.org/di/) and our code is 100% in Kotlin.
 We are constructing our views with a dummy Activity whose just contain a main Fragment. Depending on the complexity of the feature, this Fragment can act as a composer with smaller Fragment inside it or as a main view.
 
-![Example of Fragment Composition](assets/05_fragment_composition.png) 
+![Example of Fragment Composition](assets/05_fragment_composing.png) 
 
 So, based on this stack of technologies, our challenge is:
 - Be able of test each one of the Fragments separately, i.e. GoodbyeActionFragment and GoodbyeNavigationFragment.
