@@ -2,7 +2,7 @@ package eu.antoniolopez.playground.feature.goodbyeworld.view
 
 import eu.antoniolopez.playground.core.testing.UnitTest
 import eu.antoniolopez.playground.core.view.lifecycle.LifecycleStream
-import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeWorldPresenter
+import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeNavigationPresenter
 import eu.antoniolopez.playground.navigation.command.goodbyeworld.goodbyeWorldNavigationCommand
 import eu.antoniolopez.playground.navigation.command.helloworld.helloWorldNavigationCommand
 import io.mockk.every
@@ -10,24 +10,14 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 
-class GoodbyeWorldPresenterTest : UnitTest() {
+class GoodbyeNavigationPresenterTest : UnitTest() {
 
-    private lateinit var sut: GoodbyeWorldPresenter
-    private val mockView: GoodbyeWorldPresenter.View = mockk(relaxUnitFun = true)
+    private lateinit var sut: GoodbyeNavigationPresenter
+    private val mockView: GoodbyeNavigationPresenter.View = mockk(relaxUnitFun = true)
 
     override fun onPrepareBeforeEachTest() {
         every { mockView.lifecycle } returns LifecycleStream().subscribe()
-        sut = GoodbyeWorldPresenter()
-    }
-
-    @Test
-    fun `on button clicked then view renders text`() {
-        val text = "GOODBYE"
-        sut.onViewReady(mockView)
-
-        sut.onButton(text)
-
-        verify { mockView.renderText(text) }
+        sut = GoodbyeNavigationPresenter()
     }
 
     @Test

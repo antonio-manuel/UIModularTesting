@@ -4,6 +4,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -27,7 +28,7 @@ class HelloWorldActivityTest {
     private val mockPresenter: HelloWorldPresenter = mockk(relaxed = true)
 
     @get:Rule
-    var activityScenarioRule = activityScenarioRule<HelloWorldActivity>()
+    var activityScenarioRule: ActivityScenarioRule<HelloWorldActivity> = activityScenarioRule()
 
     @Before
     fun prepareKodein() {

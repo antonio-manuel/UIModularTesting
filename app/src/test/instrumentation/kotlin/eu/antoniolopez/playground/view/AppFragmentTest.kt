@@ -19,7 +19,7 @@ class AppFragmentTest : InstrumentationUnitTest() {
     private val mockPresenter: MainPresenter = mockk(relaxed = true)
     private val mockNavigator: Navigator = mockk(relaxed = true)
 
-    override fun onRequestFragment() = MainFragment.newInstance()
+    override fun onRequestFragment(): MainFragment = MainFragment.newInstance()
 
     override fun onPrepareInjection() {
         appComponent.addConfig {
