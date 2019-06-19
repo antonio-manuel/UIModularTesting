@@ -14,8 +14,8 @@ So, based on this stack of technologies, our challenge is:
 - Mock dependencies before the dependency tree is build and the app launched.
 
 ## What do we have?
-Currently, we are developing 2 different apps: [getkomuti.io](https://getkomuti.io) and [bybus.io](https://bybus.io), both applications are following the same structure and architecture and share some core components. Its main characteristic is the modularisation, trying to split and decouple the code the more we can.
-If you want to explore deeper how we face this modularisation you can check this repository: [https://github.com/txusballesteros/modularization](https://github.com/txusballesteros/modularization). But here it comes a brief explanation to understand better our situation. Our projects contains 4 main folders:
+Currently, we are developing 2 different apps: [getkomuti.io](https://getkomuti.io) and [bybus.io](https://bybus.io), both applications are following the same structure and architecture and share some core components. Its main characteristic is the modularization, trying to split and decouple the code the more we can.
+If you want to explore deeper how we face this modularization you can check this repository: [https://github.com/txusballesteros/modularization](https://github.com/txusballesteros/modularization). But here it comes a brief explanation to understand better our situation. Our projects contains 4 main folders:
 - **App**: with the application class, main manifest and the entry point of the application.
 - **Buildsystem**: dependencies and common gradle configurations.
 - **Feature**: with all the feature modules our app will contain.
@@ -47,5 +47,5 @@ So we can see how will look an example implementing this tools:
 With that, we are able to add UI Unit Test separately in each one of our feature modules, making them independents of the app module.
 
 ## TL;DR
-We prepare some base classes to help us adding UI Unit Tests in each one of our modularised Android application, with that we are able to mock dependencies, replace dependency injections and run UI tests of Fragments instead of checking the whole Activity
+We prepare some base classes to help us adding UI Unit Tests in each one of our modularized Android application, with that we are able to mock dependencies, replace dependency injections and run UI tests of Fragments instead of checking the whole Activity
 To see more of how we implemented that, checkout this repository: https://github.com/antonio-manuel/UIModularTesting
