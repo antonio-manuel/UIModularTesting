@@ -36,7 +36,7 @@ That way we have a base UI Unit Test class with the coroutines context initialis
 
 ![Base UI Unit Test class](assets/02_base_unittest_class.png)
  
-This relies on a Activity which only purpose is to attach the target Fragment to launch in the UI Test:
+This relies on an Activity which only purpose is to attach the target Fragment to launch in the UI Test:
 
 ![Dummy Fragment container Activity](assets/03_fragment_container.png)
  
