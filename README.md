@@ -3,7 +3,7 @@ The purpose of this post is to explain what was the process followed in Metropol
 
 ## What is our challenge?
 In Metropolis-lab, we talked about what would be a good UI testing approach. Our current structure leaves to each feature module the responsibility to contain its own unit test, so UI test should be the same, it should be contained in each one of the feature modules. That way, if one day one feature module is no longer needed, we can get rid of it deleting a single folder, we won't have any other references to the code contained there.
-We are following [clean code architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) with MVP. Recently, we migrated to new [AndroidX](https://developer.android.com/jetpack/androidx) libraries provided by Google, so views, Fragments and Activities are based on these new libraries. We are managing dependency injection with [Kodein](https://kodein.org/di/) and our code is 100% in Kotlin.
+We are following [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) with MVP. Recently, we migrated to new [AndroidX](https://developer.android.com/jetpack/androidx) libraries provided by Google, so views, Fragments and Activities are based on these new libraries. We are managing dependency injection with [Kodein](https://kodein.org/di/) and our code is 100% in Kotlin.
 We are constructing our views with a dummy Activity whose just contain a main Fragment. Depending on the complexity of the feature, this Fragment can act as a composer with smaller Fragment inside it or as a main view.
 
 ![Example of Fragment Composition](assets/05_fragment_composing.png) 
