@@ -12,11 +12,10 @@ import eu.antoniolopez.playground.navigation.Navigator
 import kotlinx.android.synthetic.main.hello_fragment.*
 import org.kodein.di.generic.instance
 
-class HelloWorldFragment
-    : BaseFragment(), HelloWorldPresenter.View {
+class HelloWorldFragment : BaseFragment(), HelloWorldPresenter.View {
 
     companion object {
-        fun newInstance() = HelloWorldFragment()
+        fun newInstance(): HelloWorldFragment = HelloWorldFragment()
     }
 
     private val presenter: HelloWorldPresenter by featureComponent.instance()

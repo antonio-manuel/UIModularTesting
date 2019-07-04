@@ -1,6 +1,5 @@
 package eu.antoniolopez.playground.navigation.command.helloworld
 
-import android.content.Intent
 import android.net.Uri
 import eu.antoniolopez.playground.navigation.NavigationCommand
 import eu.antoniolopez.playground.navigation.command.Command

@@ -19,19 +19,21 @@ abstract class LifecyclePresenter<T : LifecycleView> : CoroutineScope {
         onViewAttached(firstTime)
     }
 
-    protected fun onViewDestroyed() {}
+    protected open fun onViewDestroyed() {}
 
     private fun subscribeToViewLifecycle() {
         async {
             lifecycle?.consumeEach {
-                when (it) {
-                    LifecycleView.Lifecycle.RESUME -> onResume()
-                    LifecycleView.Lifecycle.PAUSE -> onPause()
-                    LifecycleView.Lifecycle.DESTROYED -> onDestroyed()
-                    LifecycleView.Lifecycle.CREATED -> onCreated()
-                    LifecycleView.Lifecycle.INITIALIZED -> onInitialized()
-                    LifecycleView.Lifecycle.STOP -> onStop()
-                    LifecycleView.Lifecycle.START -> onStart()
+                perform {
+                    when (it) {
+                        LifecycleView.Lifecycle.RESUME -> onResume()
+                        LifecycleView.Lifecycle.PAUSE -> onPause()
+                        LifecycleView.Lifecycle.DESTROYED -> onDestroyed()
+                        LifecycleView.Lifecycle.CREATED -> onCreated()
+                        LifecycleView.Lifecycle.INITIALIZED -> onInitialized()
+                        LifecycleView.Lifecycle.STOP -> onStop()
+                        LifecycleView.Lifecycle.START -> onStart()
+                    }
                 }
             }
         }.invokeOnCompletion {
@@ -76,8 +78,7 @@ abstract class LifecyclePresenter<T : LifecycleView> : CoroutineScope {
     protected fun <T> bg(
         onRun: suspend CoroutineScope.() -> T,
         onCancel: () -> Unit = { }
-    )
-            : Deferred<T> {
+    ): Deferred<T> {
         return async {
             onRun()
         }.takeUntil({ it == LifecycleView.Lifecycle.DESTROYED }, onCancel)
@@ -100,5 +101,6 @@ abstract class LifecyclePresenter<T : LifecycleView> : CoroutineScope {
         return this
     }
 
-    protected suspend fun <T> await(block: suspend () -> T): T = withContext(coroutineContext) { block() }
+    protected suspend fun <T> await(block: suspend () -> T): T =
+        withContext(coroutineContext) { block() }
 }

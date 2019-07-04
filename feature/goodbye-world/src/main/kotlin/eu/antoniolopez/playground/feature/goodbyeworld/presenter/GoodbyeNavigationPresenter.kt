@@ -5,8 +5,7 @@ import eu.antoniolopez.playground.core.view.presentation.LifecyclePresenter
 import eu.antoniolopez.playground.navigation.NavigationCommand
 import eu.antoniolopez.playground.navigation.command.helloworld.helloWorldNavigationCommand
 
-class GoodbyeNavigationPresenter
-    : LifecyclePresenter<GoodbyeNavigationPresenter.View>() {
+class GoodbyeNavigationPresenter : LifecyclePresenter<GoodbyeNavigationPresenter.View>() {
 
     fun onNavigate() {
         view?.navigateTo(helloWorldNavigationCommand())

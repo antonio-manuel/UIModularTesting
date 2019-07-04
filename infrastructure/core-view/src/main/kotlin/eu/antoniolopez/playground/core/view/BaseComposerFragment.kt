@@ -3,7 +3,6 @@ package eu.antoniolopez.playground.core.view
 import android.os.Bundle
 import android.view.View
 
-
 abstract class BaseComposerFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

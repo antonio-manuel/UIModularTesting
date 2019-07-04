@@ -11,11 +11,10 @@ import eu.antoniolopez.playground.navigation.Navigator
 import kotlinx.android.synthetic.main.goodbye_navigation_fragment.*
 import org.kodein.di.generic.instance
 
-class GoodbyeNavigationFragment
-    : BaseFragment(), GoodbyeNavigationPresenter.View {
+class GoodbyeNavigationFragment : BaseFragment(), GoodbyeNavigationPresenter.View {
 
     companion object {
-        fun newInstance() = GoodbyeNavigationFragment()
+        fun newInstance(): GoodbyeNavigationFragment = GoodbyeNavigationFragment()
     }
 
     private val presenter: GoodbyeNavigationPresenter by featureComponent.instance()

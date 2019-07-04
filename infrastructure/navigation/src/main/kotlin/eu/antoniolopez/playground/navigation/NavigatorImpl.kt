@@ -18,7 +18,6 @@ class NavigatorImpl : Navigator {
                 stackOrExecute(context, command) { intent ->
                     context.startActivity(intent)
                 }
-
             } ?: throw IllegalStateException()
         }
 
@@ -38,16 +37,16 @@ class NavigatorImpl : Navigator {
 
     private fun stackOrExecute(context: Context, command: Command, executionBlock: (Intent) -> Unit) {
         verifyPreRequisites(context, command,
-            onBlock = { command ->
+            onBlock = { currentCommand ->
                 if (pendingNavigation == null) {
-                    pendingNavigation = command
+                    pendingNavigation = currentCommand
                 }
             },
-            onSuccess = { command ->
-                if (!command.skipPendingCommand) {
+            onSuccess = { currentCommand ->
+                if (!currentCommand.skipPendingCommand) {
                     clearPendingNavigation()
                 }
-                val intent = command.toIntent()
+                val intent = currentCommand.toIntent()
                 whenSupportIntent(context, intent) {
                     executionBlock(intent)
                 }

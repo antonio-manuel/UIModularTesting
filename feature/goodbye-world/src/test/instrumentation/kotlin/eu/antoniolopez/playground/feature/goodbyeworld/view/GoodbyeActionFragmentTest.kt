@@ -9,7 +9,6 @@ import eu.antoniolopez.playground.core.view.testing.InstrumentationUnitTest
 import eu.antoniolopez.playground.feature.goodbyeworld.R
 import eu.antoniolopez.playground.feature.goodbyeworld.di.featureComponent
 import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeActionPresenter
-import eu.antoniolopez.playground.navigation.Navigator
 import io.mockk.mockk
 import org.junit.Test
 import org.kodein.di.generic.bind
@@ -17,7 +16,7 @@ import org.kodein.di.generic.singleton
 
 class GoodbyeActionFragmentTest : InstrumentationUnitTest() {
 
-    private val mockPresenter : GoodbyeActionPresenter = mockk(relaxed = true)
+    private val mockPresenter: GoodbyeActionPresenter = mockk(relaxed = true)
 
     override fun onRequestFragment(): GoodbyeActionFragment = GoodbyeActionFragment.newInstance()
 

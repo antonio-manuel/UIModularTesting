@@ -17,7 +17,7 @@ import org.kodein.di.generic.singleton
 
 class GoodbyeNavigationFragmentTest : InstrumentationUnitTest() {
 
-    private val mockPresenter : GoodbyeNavigationPresenter = mockk(relaxed = true)
+    private val mockPresenter: GoodbyeNavigationPresenter = mockk(relaxed = true)
     private val mockNavigator: Navigator = mockk(relaxed = true)
 
     override fun onRequestFragment(): GoodbyeActionFragment = GoodbyeActionFragment.newInstance()

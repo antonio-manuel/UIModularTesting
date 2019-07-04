@@ -17,7 +17,7 @@ import org.kodein.di.generic.singleton
 
 class HelloWorldFragmentTest : InstrumentationUnitTest() {
 
-    private val mockPresenter : HelloWorldPresenter = mockk(relaxed = true)
+    private val mockPresenter: HelloWorldPresenter = mockk(relaxed = true)
     private val mockNavigator: Navigator = mockk(relaxed = true)
 
     override fun onRequestFragment(): HelloWorldFragment = HelloWorldFragment.newInstance()

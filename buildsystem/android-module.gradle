@@ -2,6 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "de.mannodermaus.android-junit5"
+apply plugin: "org.jlleitschuh.gradle.ktlint"
+
+ktlint {
+    debug = true
+    android = true
+}
 
 android {
     compileSdkVersion project.compile_sdk_version

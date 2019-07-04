@@ -10,11 +10,10 @@ import eu.antoniolopez.playground.feature.goodbyeworld.presenter.GoodbyeActionPr
 import kotlinx.android.synthetic.main.goodbye_action_fragment.*
 import org.kodein.di.generic.instance
 
-class GoodbyeActionFragment
-    : BaseFragment(), GoodbyeActionPresenter.View {
+class GoodbyeActionFragment : BaseFragment(), GoodbyeActionPresenter.View {
 
     companion object {
-        fun newInstance() = GoodbyeActionFragment()
+        fun newInstance(): GoodbyeActionFragment = GoodbyeActionFragment()
     }
 
     private val presenter: GoodbyeActionPresenter by featureComponent.instance()

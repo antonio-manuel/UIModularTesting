@@ -2,7 +2,6 @@ package eu.antoniolopez.playground.threading
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.consumeEach
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.suspendCoroutine
@@ -15,14 +14,14 @@ fun perform(block: suspend CoroutineScope.() -> Unit) {
 }
 
 fun <T> bg(block: suspend CoroutineScope.() -> T): Deferred<T> {
-    val process =  CoroutineScope(APPLICATION_BG).async { block() }
+    val process = CoroutineScope(APPLICATION_BG).async { block() }
     process.invokeOnCompletion { error -> error?.let { perform { throw it } } }
     return process
 }
 
 suspend fun <T> waitUntil(block: (Continuation<T>) -> Unit) = suspendCoroutine<T> { block(it) }
 
-fun <T> Deferred<T>.onCompletion(block: () -> Unit) : Deferred<T> {
+fun <T> Deferred<T>.onCompletion(block: () -> Unit): Deferred<T> {
     this.invokeOnCompletion { block() }
     return this
 }

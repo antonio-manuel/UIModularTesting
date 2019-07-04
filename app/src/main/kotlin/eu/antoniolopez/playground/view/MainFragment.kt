@@ -14,7 +14,7 @@ import org.kodein.di.generic.instance
 class MainFragment : BaseFragment(), MainPresenter.View {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance(): MainFragment = MainFragment()
     }
 
     private val presenter: MainPresenter by appComponent.instance()

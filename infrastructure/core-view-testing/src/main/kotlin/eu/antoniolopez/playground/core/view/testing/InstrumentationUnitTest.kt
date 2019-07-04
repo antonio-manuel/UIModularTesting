@@ -17,7 +17,7 @@ import org.junit.Before
 import org.junit.Rule
 import kotlin.reflect.KClass
 
-//https://medium.com/@aitorvs/isolate-your-fragments-just-for-testing-ea7d4fddcba2
+// https://medium.com/@aitorvs/isolate-your-fragments-just-for-testing-ea7d4fddcba2
 @MediumTest
 abstract class InstrumentationUnitTest {
 
