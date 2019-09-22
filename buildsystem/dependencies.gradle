@@ -8,7 +8,7 @@ ext {
     coroutines_version = "1.2.2"
     arrow_version = "0.9.0"
     timber_version = "4.7.1"
-    kodein_version = "6.2.1"
+    kodein_version = "6.3.3"
 
     //Testing
     mockk_version = "1.9.2"
@@ -21,6 +21,7 @@ ext {
     android_junit_ktx_version = "1.1.1"
 
     kotlin_JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${project.kotlin_version}"
+    kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
 
     ktx = "androidx.core:core-ktx:${android_ktx_version}"
     androidx_core = "androidx.core:core:${support_version}"

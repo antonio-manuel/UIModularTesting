@@ -69,6 +69,7 @@ dependencies {
     implementation design
     implementation constraint_layout
     implementation kotlin_JDK8
+    implementation kotlin_reflect
     implementation kodein
     implementation kodein_conf
 

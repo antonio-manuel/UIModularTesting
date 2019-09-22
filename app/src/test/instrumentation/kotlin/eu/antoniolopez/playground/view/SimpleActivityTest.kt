@@ -23,7 +23,7 @@ class SimpleAppActivityTest {
 
     @Test
     fun checkButtonText() {
-        onView(withId(R.id.simple_button))
+        onView(withId(R.id.button_activity))
             .perform(click())
             .check(matches(withText("SimpleButton")))
     }

@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.filters.MediumTest
-import eu.antoniolopez.playground.core.view.testing.threading.CoroutineContextForTest
 import eu.antoniolopez.playground.core.view.testing.view.SingleFragmentActivity
 import eu.antoniolopez.playground.threading.APPLICATION_BG
 import eu.antoniolopez.playground.threading.APPLICATION_MAIN
@@ -29,7 +28,7 @@ abstract class InstrumentationUnitTest {
     @Before
     fun onBefore() {
         APPLICATION_MAIN = Dispatchers.Main + CoroutineExceptionHandler { _, error -> throw error }
-        APPLICATION_BG = CoroutineContextForTest + CoroutineExceptionHandler { _, error -> throw error }
+        APPLICATION_BG = Dispatchers.Unconfined + CoroutineExceptionHandler { _, error -> throw error }
         clearAllMocks()
         onPrepareInjection()
         onPrepareBeforeEachTest()

@@ -10,8 +10,10 @@ dependencies {
     implementation project(':infrastructure:threading')
 
     implementation kotlin_JDK8
+    implementation kotlin_reflect
     implementation androidx_core
     implementation app_compat
+    api kotlin_reflect
     api test_core
     api test_rules
     api android_junit
